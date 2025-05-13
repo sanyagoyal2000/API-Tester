@@ -142,7 +142,7 @@ def display_headers_section(key_prefix=""):
             )
         with cols[2]:
             if headers[i]["key"] == "data-partition-id":
-                partition_options = ["sandbox-weu-des-prod-testing-e", "qa-weu-des-prod-testing-eu"]
+                partition_options = ["partition1", "partition2"]
                 selected = st.selectbox("Data Partition ID for this request", partition_options,
                                         index=0, key=f"partition_{key_prefix}")
                 custom = st.text_input("Or enter a custom partition ID", key=f"custom_partition_{key_prefix}")
@@ -534,7 +534,7 @@ def send_request(method, url, headers, cookies, json_data):
 def main():
     st.set_page_config(layout="wide", page_title="API Tester")
 
-    st.title("Data Bridge APIs Tester")
+    st.title("APIs Tester")
 
     initialize_session_state()
     api_configuration_sidebar()
